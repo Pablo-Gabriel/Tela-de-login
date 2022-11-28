@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    
+    
+    <title>Tela de login</title>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="tela-de-login">
+            <h1>Login</h1>
+            <input id="inputLogin" type="text" placeholder="Email ou nome de usuário">
+        
+            <h2>Senha</h2>
+            <input id="inputSenha" type="password" placeholder="Senha">
+            <br>
+            <a id="recuperação" href="">Esqueci minha senha</a>
+            <br>
+
+            <input type="checkbox" name="Manter-me conectado" id="checkbox">
+            <label id="checkbox-text" for="checkbox">Me mantenha conectado</label>
+
+            <br>
+
+            <button id="ButtonAcessar" onclick="Colocardados()">Fazer login</button>
+        </div>
+    </div>
+    <script>
+        const elementEmail = document.querySelector("#inputLogin");
+        const elementSenha = document.querySelector("#inputSenha");
+        const elementButton = document.querySelector("#ButtonAcessar");
+    
+        function Colocardados() { 
+            if (elementEmail.value == "" || elementSenha.value == "") {
+                alert("Por favor preencha seus dados")
+                return
+            }
+
+            elementEmail.value = ""
+            elementSenha.value = ""
+        }
+    
+    </script>
+</body>
+
+
+
+</html>
