@@ -16,8 +16,8 @@
     <div id="container">
         <div id="tela-de-login">
             <h1>Login</h1>
-            <input id="inputLogin" type="text" placeholder="Email ou nome de usuário">
-        
+            <input id="inputLogin" type="email" name="email" onblur="validarEmail()"placeholder="Email ou nome de usuário">
+            <spam id="msgemail"></spam>
             <h2>Senha</h2>
             <input id="inputSenha" type="password" placeholder="Senha">
             <br>
@@ -36,13 +36,23 @@
         const elementEmail = document.querySelector("#inputLogin");
         const elementSenha = document.querySelector("#inputSenha");
         const elementButton = document.querySelector("#ButtonAcessar");
-    
+        const elementError = document.querySelector("#msgemail");
+
+        function validarEmail() {
+            if (!elementEmail.checkValidity()) {
+                elementError.innerHTML = "Email invalido";
+            }
+            else {
+                elementError.innerHTML = "";
+            }
+        }
+
         function Colocardados() { 
             if (elementEmail.value == "" || elementSenha.value == "") {
                 alert("Por favor preencha seus dados")
                 return
             }
-
+                        
             elementEmail.value = ""
             elementSenha.value = ""
         }

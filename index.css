@@ -48,6 +48,20 @@ h1, h2 {
     background-color: rgb(243, 240, 240);
 }
 
+#inputLogin:invalid {
+    border-color: red;
+}
+
+#inputLogin:focus:invalid {
+    box-shadow: none;
+
+}
+
+#msgemail {
+    color: red;
+    font-size: 15px;
+}
+
 #recuperação {
     display: block;
 }
